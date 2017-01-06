@@ -1,0 +1,18 @@
+[
+	{
+		"pk": 1,
+		"model": "hello.ContactDetail",
+		"fields": {
+			"first_name": "Yauhen",
+			"last_name": "Alkhouski",
+			"birth_day": "1976-11-20",
+			"bio": "some bio information",
+			"email": "zzreklama@gmail.com",
+			"mobile": "375296019605",
+			"skype": "i.eugene",
+			"jabber": "iameugene@42cc.co",
+			"other_contacts": "some other contact"
+		}
+	}
+
+]

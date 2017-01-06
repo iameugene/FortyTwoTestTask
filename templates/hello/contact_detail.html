@@ -12,7 +12,7 @@
       </li>
       <li><strong>Last Name:</strong> <span class="info">{{ cd_data.last_name }}</span>
       </li>
-      <li><strong>Birth Date:</strong> <span class="info">{{ cd_data.birth_day|date:"o-m-j" }}</span>
+      <li><strong>Birth Date:</strong> <span class="info">{{ cd_data.birth_day }}</span>
       </li>
         <li><strong>Bio:</strong> {{ cd_data.bio|linebreaks }}</li>
       </ul>
@@ -20,8 +20,8 @@
   <div class="row_2">
     <ul class="cd w-list-unstyled">
       <li><span><strong>email</strong>:</span> {{ cd_data.email }}</li>
-      <li><span><strong>Cellphone</strong></span>: {{ cd_data.mobile }}</li>
-      <li><span><strong>Skype</strong></span>: {{ contact_detai.lskype }}</li>
+      <li><span><strong>Cellphone:</strong></span> {{ cd_data }}</li>
+      <li><span><strong>Skype</strong></span>: {{ cd_data.skype }}</li>
       <li><span><strong>Jabber</strong></span>: {{ cd_data.jabber }}</li>
       <li><span><strong>Other contact:</strong></span> {{ cd_data.other_contacts|linebreaks }}</li>
     </ul>
