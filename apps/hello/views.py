@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 from apps.hello.models import ContactDetail
 
+
 def contact_detail(request):
     cd_data = ContactDetail.objects.last()
 
