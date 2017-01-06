@@ -5,6 +5,7 @@ from apps.hello.models import ContactDetail
 
 
 class ContactDetailTest(TestCase):
+    fixtures = ['data.json']
     def setUp(self):
         self.contact_detail = {
             "first_name": "Yauhen",
