@@ -1,34 +1,33 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
   {% block title %} Contact Detail {% endblock %}
   {% block content %}
   <div class="header">
     <h1>Contact Detail</h1>
   </div>
+      {% if cd_data %}
   <div class="row_1">
     <ul class="cd w-list-unstyled">
-      <li><strong>First Name:</strong> <span class="info">Yauhen</span>
+      <li><strong>First Name:</strong> <span class="info">{{ cd_data.first_name }}</span>
       </li>
-      <li><strong>Last Name:</strong> <span class="info">Alkhouski</span>
+      <li><strong>Last Name:</strong> <span class="info">{{ cd_data.last_name }}</span>
       </li>
-      <li><strong>Birth Date:</strong> <span class="info">20.11.1976</span>
+      <li><strong>Birth Date:</strong> <span class="info">{{ cd_data.birth_day|date:"o-m-j" }}</span>
       </li>
-      <li><strong>Bio:</strong>
-	<br>
-	Some bio information
-        <br>
-	<br>With multiline textfield</li>
+        <li><strong>Bio:</strong> {{ cd_data.bio|linebreaks }}</li>
       </ul>
   </div>
   <div class="row_2">
     <ul class="cd w-list-unstyled">
-      <li><span><strong>email</strong>:</span> zzre@gmail.com</li>
-      <li><span><strong>Cellphone</strong></span>: 3752960196</li>
-      <li><span><strong>Skype</strong></span>: iameu</li>
-      <li><span><strong>Jabber</strong></span>: iam@42cc.co</li>
-      <li><span><strong>Other</strong> contact:&nbsp;</span>
-      <br>Some other contact
-      <br>with multiline</li>
+      <li><span><strong>email</strong>:</span> {{ cd_data.email }}</li>
+      <li><span><strong>Cellphone</strong></span>: {{ cd_data.mobile }}</li>
+      <li><span><strong>Skype</strong></span>: {{ contact_detai.lskype }}</li>
+      <li><span><strong>Jabber</strong></span>: {{ cd_data.jabber }}</li>
+      <li><span><strong>Other contact:</strong></span> {{ cd_data.other_contacts|linebreaks }}</li>
     </ul>
   </div>
+      {% else %}
+      <p></p>
+      {% endif %}
   <div class="footer"></div>
   {% endblock %}
