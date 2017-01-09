@@ -3,6 +3,9 @@ from django.db import connection
 
 
 def history_view(request):
+    '''
+    Check if
+    '''
 
     try:
         cursor = connection.cursor()
