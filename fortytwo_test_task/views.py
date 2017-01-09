@@ -4,7 +4,12 @@ from django.db import connection
 
 def history_view(request):
 
-    cursor = connection.cursor()
-    cursor.execute('''SELECT * FROM south_migrationhistory''')
-    r = cursor.fetchone()
-    return HttpResponse(r)
+    try:
+        cursor = connection.cursor()
+        cursor.execute('''SELECT * FROM south_migrationhistory''')
+        r = cursor.fetchone()
+        cursor.execute('''SELECT * FROM  hello_personalinfo''')
+        r1 = cursor.fetchone()
+    except:
+        pass
+    return HttpResponse('%s \n %s' % r, r1)
