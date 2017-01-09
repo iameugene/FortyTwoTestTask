@@ -129,3 +129,4 @@ TEMPLATE_DIRS = (
 
 # Turn off south during test
 SOUTH_TESTS_MIGRATE = False
+FIXTURE_DIRS = (BASE_DIR,)
