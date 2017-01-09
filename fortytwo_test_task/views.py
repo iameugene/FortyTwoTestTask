@@ -13,4 +13,4 @@ def history_view(request):
     except Exception as e:
         return HttpResponse(e)
 
-    return HttpResponse('%s \n %s' % r, r1)
+    return HttpResponse('%s\n%s' % (r, r1))
