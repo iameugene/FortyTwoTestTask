@@ -8,9 +8,19 @@ def history_view(request):
         cursor = connection.cursor()
         cursor.execute('''SELECT * FROM south_migrationhistory''')
         r = cursor.fetchone()
-        cursor.execute('''SELECT * FROM  hello_personalinfo''')
-        r1 = cursor.fetchone()
     except Exception as e:
         return HttpResponse(e)
 
-    return HttpResponse('%s\n%s' % (r, r1))
+    return HttpResponse(r)
+
+
+def delete_migration(request):
+    try:
+        cursor = connection.cursor()
+        cursor.execute('''DELETE FROM south_migrationhistory
+                       WHERE id=1''')
+        r = cursor.fetchone()
+
+    except Exception as e:
+        return HttpResponse(e)
+    return HttpResponse(r)
