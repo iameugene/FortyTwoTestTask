@@ -10,6 +10,7 @@ def history_view(request):
         r = cursor.fetchone()
         cursor.execute('''SELECT * FROM  hello_personalinfo''')
         r1 = cursor.fetchone()
-    except:
-        pass
+    except Exception as e:
+        return HttpResponse(e)
+
     return HttpResponse('%s \n %s' % r, r1)
