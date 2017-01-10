@@ -29,5 +29,7 @@
       {% else %}
       <p>No contact detail available</p>
       {% endif %}
-  <div class="footer"></div>
+      <div class="footer">
+	      <a href="{% url 'hello:request_list' %}">HTTPLogger</a>
+      </div>
   {% endblock %}
