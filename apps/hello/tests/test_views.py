@@ -20,6 +20,17 @@ class ContactDetailTest(TestCase):
             "jabber": "iameugene@42cc.co",
             "other_contacts": "some other contact",
         }
+        self.next_contact_detail = {
+            "first_name": "David",
+            "last_name": "Mihoelse  ",
+            "birth_day": "1956-10-20",
+            "bio": "some bio information",
+            "email": "zzma@gmail.com",
+            "mobile": "375293897883",
+            "skype": "i.mij",
+            "jabber": "imih@42cc.co",
+            "other_contacts": "some other contact",
+        }
 
     def test_returns_correct_template(self):
         """
@@ -52,3 +63,13 @@ class ContactDetailTest(TestCase):
         ContactDetail.objects.all().delete()
         response = self.client.get(reverse('hello:contact_detail'))
         self.assertContains(response, 'No contact detail available')
+
+    def test_return_last_entity(self):
+        """
+        The view should return last entity if there are more than one
+        contact detail in DB
+        """
+        ContactDetail.objects.create(**self.next_contact_detail)
+        response = self.client.get(reverse('hello:contact_detail'))
+        self.assertEqual(response.context['cd_data'],
+                         ContactDetail.objects.last())
