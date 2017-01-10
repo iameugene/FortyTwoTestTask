@@ -43,3 +43,12 @@ class ContactDetailTest(TestCase):
         """
         response = self.client.get(reverse('hello:contact_detail'))
         self.assertContains(response, 'zzreklama@gmail.com', count=1)
+
+    def test_no_data_presented(self):
+        """
+        Page should display 'No contact detail available'
+        if no contact detail presented
+        """
+        ContactDetail.objects.all().delete()
+        response = self.client.get(reverse('hello:contact_detail'))
+        self.assertContains(response, 'No contact detail available')
