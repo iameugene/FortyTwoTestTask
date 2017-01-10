@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}(0) Unreaded requests{% endblock %}
+{% block extra_head %}
+	<link rel="stylesheet" href='{% static "css/screen.css" %}'>
+{% endblock %}
+{% block content %}
+    <div class="wrapper">
+      <h2>Last 10 HTTP Requests</h2>
+      <div id="requests_list">
+        <ul class="w-list-unstyled">
+		<li>[04/Jan/2017 08:25:22] GET /favicon.ico</li>	
+		<li>[04/Jan/2017 08:25:22] GET /</li>	
+		<li>[04/Jan/2017 09:25:22] GET /admin</li>	
+		<li>[04/Jan/2017 08:25:22] GET /admin/auth</li>	
+		<li>[04/Jan/2017 08:55:22] GET /admin/jsi18n/</li>	
+		<li>[04/Jan/2017 09:25:22] GET /</li>	
+		<li>[04/Jan/2017 09:35:22] GET /</li>	
+		<li>[04/Jan/2017 01:25:22] GET /favicon.ico</li>	
+		<li>[04/Jan/2017 01:45:22] GET /</li>	
+		<li>[04/Jan/2017 08:25:22] GET /admin</li>	
+	
+	  
+        </ul>
+      </div>
+      <div class="navbar">
+	      <a href="{% url 'hello:contact_detail' %}">home</a>
+      </div>
+    </div>
+{% endblock %}
