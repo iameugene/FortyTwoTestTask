@@ -42,6 +42,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'south',
+
     'apps.hello',
 )
 
@@ -65,7 +67,7 @@ WSGI_APPLICATION = 'fortytwo_test_task.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'test42db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'ccdb.sqlite3'),
     }
 }
 
@@ -127,3 +129,4 @@ TEMPLATE_DIRS = (
 
 # Turn off south during test
 SOUTH_TESTS_MIGRATE = False
+FIXTURE_DIRS = (BASE_DIR,)
